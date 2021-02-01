@@ -1,0 +1,36 @@
+
+<nav class="cyan darken-3">
+ 
+
+
+    <div class="nav-wrapper">
+ <div class="container"><img src="logo.png" alt="copyright" width=30" height="60">
+      <a href="#" data-target="main-menu" class="button-collapse show-on-large sidenav-trigger"><i class="fa fa-bars"></i></a>
+      <a href="/" class="brand-logo center">BLUE RIDGE GRILL</a>
+      
+      <!-- SIDE MENU -->
+      <ul class="sidenav" id="main-menu">
+          {{#if user}}
+          {{else}}
+           <li>
+             <P>no se que poner</p>
+            </li>     
+          {{/if}}
+          <li>
+              <a href="/"><i class="fa fa-cog"></i>index</a>
+            </li>
+            <li>
+              <a href="/menu"><i class="fa fa-book"></i>menu</a>
+            </li>
+                 {{#if user}}
+<li>
+              <a href="/opinions/"><i class="fa fa-user"></i>footer</a>
+            </li>     
+            <li class="divider"></li>
+            
+          {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+
