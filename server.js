@@ -7,7 +7,8 @@ const mongodb = require('mongodb');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const PORT = 5000;
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 const connectDB = require('./config/db')
 
 connectDB()
@@ -32,3 +33,13 @@ app.listen(PORT, function(){
 // config
 dotenv.config({ path: './config/config.env' })
 });
+
+// Sessions
+app.use(
+    session({
+      secret: 'keyboard cat',
+      resave: false,
+      saveUninitialized: false,
+      store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    })
+  )
