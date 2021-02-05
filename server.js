@@ -7,6 +7,9 @@ const mongodb = require('mongodb');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const PORT = 5000;
+const connectDB = require('./mongo.init/db')
+
+connectDB()
 
 //Images
 app.use(express.static('views/images'));
