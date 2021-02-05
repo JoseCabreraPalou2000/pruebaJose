@@ -7,7 +7,7 @@ const mongodb = require('mongodb');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const PORT = 5000;
-const connectDB = require('./mongo.init/db')
+const connectDB = require('./config/db')
 
 connectDB()
 
@@ -27,4 +27,7 @@ app.use(express.static(path.join(__dirname,'public')))
 //Ports
 app.listen(PORT, function(){
     console.log('Your node js server is running on PORT:',PORT);
+
+// config
+dotenv.config({ path: './config/config.env' })
 });
