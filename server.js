@@ -7,6 +7,7 @@ const mongodb = require('mongodb');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const PORT = 5000;
+const mongoose = require('mongoose')
 const connectDB = require('./config/db')
 
 connectDB()
